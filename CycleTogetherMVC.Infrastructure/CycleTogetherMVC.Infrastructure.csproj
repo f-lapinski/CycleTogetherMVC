@@ -10,4 +10,8 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CycleTogetherMVC.Domain\CycleTogetherMVC.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

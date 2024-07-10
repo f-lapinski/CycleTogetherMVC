@@ -11,4 +11,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CycleTogetherMVC.Domain\CycleTogetherMVC.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
