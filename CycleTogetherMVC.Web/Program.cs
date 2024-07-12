@@ -1,3 +1,7 @@
+using CycleTogetherMVC.Application.Interfaces;
+using CycleTogetherMVC.Application.Services;
+using CycleTogetherMVC.Domain.Interface;
+using CycleTogetherMVC.Infrastructure.Repositories;
 using CycleTogetherMVC.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +17,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<ITripService, TripService>();
+builder.Services.AddTransient<ITripRepository, TripRepository>();
 
 var app = builder.Build();
 
