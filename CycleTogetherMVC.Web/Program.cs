@@ -1,6 +1,7 @@
 using CycleTogetherMVC.Application.Interfaces;
 using CycleTogetherMVC.Application.Services;
 using CycleTogetherMVC.Domain.Interface;
+using CycleTogetherMVC.Infrastructure;
 using CycleTogetherMVC.Infrastructure.Repositories;
 using CycleTogetherMVC.Web.Data;
 using Microsoft.AspNetCore.Identity;
@@ -10,12 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<ITripService, TripService>();
