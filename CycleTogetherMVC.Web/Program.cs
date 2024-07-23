@@ -3,7 +3,6 @@ using CycleTogetherMVC.Application.Services;
 using CycleTogetherMVC.Domain.Interface;
 using CycleTogetherMVC.Infrastructure;
 using CycleTogetherMVC.Infrastructure.Repositories;
-using CycleTogetherMVC.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CycleTogetherMVC.Domain.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace CycleTogetherMVC.Application.Interfaces
 {
     public interface ITripService
     {
-        public List<int> GetAllTrips();
+        public List<Trip> GetAllTripsForList();
     }
 }

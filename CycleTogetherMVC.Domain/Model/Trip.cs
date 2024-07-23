@@ -14,6 +14,10 @@ namespace CycleTogetherMVC.Domain.Model
 
         public required string Description { get; set; }
 
+        public required DateTime StartDate { get; set; }
+
+        public required DateTime EndDate { get; set; }
+
         public required int Distance { get; set; }
 
         public ICollection<TripComment> TripComments { get; set; } = new List<TripComment>();

@@ -10,4 +10,8 @@
     <ProjectReference Include="..\CycleTogetherMVC.Domain\CycleTogetherMVC.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\TripComment\" />
+  </ItemGroup>
+
 </Project>
