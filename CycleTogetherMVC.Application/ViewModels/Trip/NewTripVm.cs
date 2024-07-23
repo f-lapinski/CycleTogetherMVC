@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CycleTogetherMVC.Domain.Model
+namespace CycleTogetherMVC.Application.ViewModels.Trip
 {
-    public class Trip
+    public class NewTripVm
     {
         public int Id { get; set; }
 
@@ -19,11 +19,5 @@ namespace CycleTogetherMVC.Domain.Model
         public required DateTime EndDate { get; set; }
 
         public required int Distance { get; set; }
-
-        public ICollection<TripComment> TripComments { get; set; } = new List<TripComment>();
-
-        public required string Author { get; set; }
-
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

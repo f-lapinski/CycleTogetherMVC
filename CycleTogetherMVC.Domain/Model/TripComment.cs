@@ -17,5 +17,7 @@ namespace CycleTogetherMVC.Domain.Model
         public required int TripId { get; set; }
 
         public required Trip Trip { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }

@@ -1,4 +1,5 @@
-﻿using CycleTogetherMVC.Domain.Model;
+﻿using CycleTogetherMVC.Application.ViewModels.Trip;
+using CycleTogetherMVC.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace CycleTogetherMVC.Application.Interfaces
 {
     public interface ITripService
     {
-        public List<Trip> GetAllTripsForList();
+        ListTripForListVm GetAllTripsForList();
+
+        int AddTrip(NewTripVm trip);
+
+        TripDetailsVm GetTripDetails(int tripId);
     }
 }

@@ -8,10 +8,12 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 {
     public class TripForListVm
     {
-        public required string Title { get; set; }
+        public string Title { get; set; }
 
-        public required string Description { get; set; }
+        public string Description { get; set; }
 
-        public required int Distance { get; set; }
+        public int Distance { get; set; }
+
+        public string Duration { get; set; }
     }
 }
