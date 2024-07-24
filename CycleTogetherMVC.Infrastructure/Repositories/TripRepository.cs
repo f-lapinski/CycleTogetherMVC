@@ -35,15 +35,15 @@ namespace CycleTogetherMVC.Infrastructure.Repositories
             return trip.Id;
         }
 
-        public Trip? GetTripById(int tripId)
+        public Trip GetTripById(int tripId)
         {
             var trip = _context.Trips.FirstOrDefault(t => t.Id == tripId);
             return trip;
         }
 
-        public IQueryable<Trip> GetAllTrips()
+        public IQueryable<Trip> GetAllActiveTrips()
         {
-            var trips = _context.Trips;
+            var trips = _context.Trips.Where(t => t.IsActive == true);
             return trips;
         }
     }

@@ -10,13 +10,13 @@ namespace CycleTogetherMVC.Domain.Model
     {
         public int Id { get; set; }
 
-        public required string Content { get; set; }
+        public string Content { get; set; }
 
-        public required string Author { get; set; }
+        public string Author { get; set; }
 
-        public required int TripId { get; set; }
+        public int TripId { get; set; }
 
-        public required Trip Trip { get; set; }
+        public Trip Trip { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }

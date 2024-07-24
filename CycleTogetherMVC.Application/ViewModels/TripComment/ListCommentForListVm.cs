@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CycleTogetherMVC.Application.Mapping;
+using TripCommentModel = CycleTogetherMVC.Domain.Model.TripComment;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -15,7 +15,7 @@ namespace CycleTogetherMVC.Domain.Interface
 
         Trip? GetTripById(int tripId);
 
-        IQueryable<Trip> GetAllTrips();
+        IQueryable<Trip> GetAllActiveTrips();
 
     }
 }

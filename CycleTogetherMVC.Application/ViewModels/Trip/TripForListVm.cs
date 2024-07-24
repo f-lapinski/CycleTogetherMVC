@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using CycleTogetherMVC.Application.Mapping;
+using TripModel = CycleTogetherMVC.Domain.Model.Trip;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CycleTogetherMVC.Application.ViewModels.Trip
 {
-    public class TripForListVm
+    public class TripForListVm : IMapFrom<TripModel>
     {
         public string Title { get; set; }
 
@@ -15,5 +18,10 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
         public int Distance { get; set; }
 
         public string Duration { get; set; }
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<TripModel, TripForListVm>();
+        }
     }
 }

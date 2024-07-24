@@ -10,19 +10,21 @@ namespace CycleTogetherMVC.Domain.Model
     {
         public int Id { get; set; }
 
-        public required string Title { get; set; }
+        public string Title { get; set; }
 
-        public required string Description { get; set; }
+        public string Description { get; set; }
 
-        public required DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
-        public required DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; }
 
-        public required int Distance { get; set; }
+        public int Distance { get; set; }
 
-        public ICollection<TripComment> TripComments { get; set; } = new List<TripComment>();
+        public ICollection<TripComment> TripComments { get; set; }
 
-        public required string Author { get; set; }
+        public string Author { get; set; }
+
+        public bool IsActive { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
