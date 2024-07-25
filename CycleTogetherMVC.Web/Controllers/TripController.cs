@@ -5,13 +5,10 @@ namespace CycleTogetherMVC.Web.Controllers
 {
     public class TripController : Controller
     {
-        private readonly ILogger _logger;
-        
         private readonly ITripService _tripService;
 
-        public TripController(ILogger logger, ITripService tripService)
+        public TripController(ITripService tripService)
         {
-            _logger = logger;
             _tripService = tripService;
         }
         public IActionResult Index()
@@ -20,22 +17,14 @@ namespace CycleTogetherMVC.Web.Controllers
             return View(model);
         }
 
-        [HttpGet]
         public IActionResult AddTrip()
         {
-            return View();
-        }
-
-        public IActionResult AddTrip(TripModel model)
-        {
-            var id = _tripService.AddTrip(model);
-            return View();
+            throw new NotImplementedException();
         }
 
         public IActionResult ViewTrip(int tripId) 
         {
-            var tripModel = _tripService.GetTripById(tripId);
-            return View(tripModel);
+            throw new NotImplementedException();
         }
     }
 }

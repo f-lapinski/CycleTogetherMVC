@@ -13,7 +13,8 @@ namespace CycleTogetherMVC.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            return services.AddTransient<ITripRepository, TripRepository>();
+            services.AddTransient<ITripRepository, TripRepository>();
+            return services;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CycleTogetherMVC.Application.Interfaces;
+using CycleTogetherMVC.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace CycleTogetherMVC.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddTransient<ITripService, ITripService>();
+            services.AddTransient<ITripService, TripService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
