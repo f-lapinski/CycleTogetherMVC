@@ -1,3 +1,4 @@
+using CycleTogetherMVC.Application;
 using CycleTogetherMVC.Application.Interfaces;
 using CycleTogetherMVC.Application.Services;
 using CycleTogetherMVC.Domain.Interface;
@@ -18,8 +19,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<ITripService, TripService>();
-builder.Services.AddTransient<ITripRepository, TripRepository>();
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
