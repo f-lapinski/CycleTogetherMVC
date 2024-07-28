@@ -22,9 +22,18 @@ namespace CycleTogetherMVC.Web.Controllers
             throw new NotImplementedException();
         }
 
-        public IActionResult ViewTrip(int tripId) 
+        public IActionResult Details(int id) 
         {
-            throw new NotImplementedException();
+            var trip = _tripService.GetTripDetails(id);
+
+            if (trip == null)
+            {;
+                return NotFound();
+            } 
+            else
+            {
+                return View(trip);
+            }
         }
     }
 }

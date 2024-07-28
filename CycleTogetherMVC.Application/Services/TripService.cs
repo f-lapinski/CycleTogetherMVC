@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using CycleTogetherMVC.Application.Interfaces;
 using CycleTogetherMVC.Application.ViewModels.Trip;
+using CycleTogetherMVC.Application.ViewModels.TripComment;
 using CycleTogetherMVC.Domain.Interface;
 using CycleTogetherMVC.Domain.Model;
 using System;
@@ -45,7 +46,11 @@ namespace CycleTogetherMVC.Application.Services
         public TripDetailsVm GetTripDetails(int tripId)
         {
             var trip = _tripRepository.GetTripById(tripId);
+            var tripComments = _tripRepository.GetTripComments(tripId)
+                .ProjectTo<CommentForListVm>(_mapper.ConfigurationProvider).ToList();
+            
             var tripVm = _mapper.Map<TripDetailsVm>(trip);
+            tripVm.Comments = tripComments;
 
             return tripVm;
         }

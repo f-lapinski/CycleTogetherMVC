@@ -35,9 +35,9 @@ namespace CycleTogetherMVC.Infrastructure.Repositories
             return trip.Id;
         }
 
-        public Trip GetTripById(int tripId)
+        public Trip? GetTripById(int tripId)
         {
-            var trip = _context.Trips.FirstOrDefault(t => t.Id == tripId);
+            var trip = _context.Trips.SingleOrDefault(t => t.Id == tripId);
             return trip;
         }
 
@@ -45,6 +45,12 @@ namespace CycleTogetherMVC.Infrastructure.Repositories
         {
             var trips = _context.Trips.Where(t => t.IsActive == true);
             return trips;
+        }
+
+        public IQueryable<TripComment> GetTripComments(int tripId)
+        {
+            var comments = _context.TripComments.Where(c => c.TripId == tripId);
+            return comments;
         }
     }
 }

@@ -11,6 +11,8 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 {
     public class TripForListVm : IMapFrom<TripModel>
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }
@@ -21,7 +23,8 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<TripModel, TripForListVm>();
+            profile.CreateMap<TripModel, TripForListVm>()
+                .ForMember(dest => dest.Duration, opt => opt.MapFrom(src => src.StartDate + " - " + src.EndDate));
         }
     }
 }

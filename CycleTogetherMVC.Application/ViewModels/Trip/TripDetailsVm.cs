@@ -30,8 +30,7 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<TripModel, TripDetailsVm>()
-                .ForMember(s => s.Comments, opt => opt.MapFrom(s => s.TripComments));
+            profile.CreateMap<TripModel, TripDetailsVm>();
         }
     }
 }
