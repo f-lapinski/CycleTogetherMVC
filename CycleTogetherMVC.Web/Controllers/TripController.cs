@@ -1,4 +1,5 @@
 ﻿using CycleTogetherMVC.Application.Interfaces;
+using CycleTogetherMVC.Application.ViewModels.Trip;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CycleTogetherMVC.Web.Controllers
@@ -17,9 +18,17 @@ namespace CycleTogetherMVC.Web.Controllers
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult AddTrip()
         {
-            throw new NotImplementedException();
+            return View(new NewTripVm());
+        }
+
+        [HttpPost]
+        public IActionResult AddTrip(NewTripVm model)
+        {
+            var id = _tripService.AddTrip(model);
+            return View();
         }
 
         public IActionResult Details(int id) 
