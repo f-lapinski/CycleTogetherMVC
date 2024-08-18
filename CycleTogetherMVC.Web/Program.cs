@@ -4,6 +4,7 @@ using CycleTogetherMVC.Application.Services;
 using CycleTogetherMVC.Domain.Interface;
 using CycleTogetherMVC.Infrastructure;
 using CycleTogetherMVC.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<Context>();
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllersWithViews().AddFluentValidation();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
