@@ -26,7 +26,12 @@ namespace CycleTogetherMVC.Application.Services
         }
         public int AddTrip(NewTripVm trip)
         {
-            throw new NotImplementedException();
+            var newTrip = _mapper.Map<Trip>(trip);
+            newTrip.Author = "Test User";
+            newTrip.IsActive = true;
+            var id = _tripRepository.AddTrip(newTrip);
+
+            return id;
         }
 
         public ListTripForListVm GetAllTripsForList()

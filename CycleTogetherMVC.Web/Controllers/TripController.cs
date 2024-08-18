@@ -19,16 +19,16 @@ namespace CycleTogetherMVC.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddTrip()
+        public IActionResult Create()
         {
             return View(new NewTripVm());
         }
 
         [HttpPost]
-        public IActionResult AddTrip(NewTripVm model)
+        public IActionResult Create(NewTripVm model)
         {
             var id = _tripService.AddTrip(model);
-            return View();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id) 
