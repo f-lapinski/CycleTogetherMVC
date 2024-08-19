@@ -1,5 +1,9 @@
 ﻿using CycleTogetherMVC.Application.Interfaces;
 using CycleTogetherMVC.Application.Services;
+using CycleTogetherMVC.Application.ViewModels.Trip;
+using CycleTogetherMVC.Application.ViewModels.TripComment;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -8,6 +12,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static CycleTogetherMVC.Application.ViewModels.TripComment.NewCommentVm;
 
 namespace CycleTogetherMVC.Application
 {
@@ -17,6 +22,15 @@ namespace CycleTogetherMVC.Application
         {
             services.AddTransient<ITripService, TripService>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            return services;
+        }
+
+        public static IServiceCollection AddValidators(this IServiceCollection services)
+        {
+            services.AddFluentValidationAutoValidation();
+            services.AddScoped<IValidator<NewTripVm>, NewTripVmValidation>();
+            services.AddScoped<IValidator<NewCommentVm>, NewCommentVmValidation>();
+
             return services;
         }
     }

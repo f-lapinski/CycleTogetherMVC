@@ -27,8 +27,13 @@ namespace CycleTogetherMVC.Web.Controllers
         [HttpPost]
         public IActionResult Create(NewTripVm model)
         {
-            var id = _tripService.AddTrip(model);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var id = _tripService.AddTrip(model);
+                return RedirectToAction("Index");
+            }
+            
+            return View("Create", model);
         }
 
         public IActionResult Details(int id) 

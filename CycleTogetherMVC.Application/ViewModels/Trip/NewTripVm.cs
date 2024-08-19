@@ -18,9 +18,9 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 
         public string Description { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now.Date;
 
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; } = DateTime.Now.Date;
 
         public int Distance { get; set; }
 
@@ -46,15 +46,15 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 
             RuleFor(input => input.StartDate)
                 .NotEmpty()
-                .GreaterThanOrEqualTo(DateTime.Now).WithMessage("Start Date must be Greater or Equal to Today Date");
+                .GreaterThanOrEqualTo(DateTime.Now);
 
             RuleFor(input => input.EndDate)
                 .NotEmpty()
-                .GreaterThanOrEqualTo(DateTime.Now).WithMessage("End Date must be Greater or Equal to Today Date");
+                .GreaterThanOrEqualTo(DateTime.Now);
 
             RuleFor(input => input.Distance)
                 .NotEmpty()
-                .GreaterThan(0).WithMessage("Distance must be greater than 0");
+                .GreaterThan(0);
         }
     }
 }
