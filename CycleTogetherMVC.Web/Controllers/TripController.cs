@@ -33,7 +33,26 @@ namespace CycleTogetherMVC.Web.Controllers
                 return RedirectToAction("Index");
             }
             
-            return View("Create", model);
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var trip = _tripService.GetTripForEdit(id);
+            return View(trip);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(NewTripVm model)
+        {
+            if (ModelState.IsValid)
+            {
+                _tripService.UpdateTrip(model);
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
 
         public IActionResult Details(int id) 
@@ -48,6 +67,12 @@ namespace CycleTogetherMVC.Web.Controllers
             {
                 return View(trip);
             }
+        }
+
+        public IActionResult Delete(int id)
+        {
+            _tripService.DeleteTrip(id);
+            return RedirectToAction("Index");
         }
     }
 }

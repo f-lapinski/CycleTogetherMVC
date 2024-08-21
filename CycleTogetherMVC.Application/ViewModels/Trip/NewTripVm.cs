@@ -26,7 +26,7 @@ namespace CycleTogetherMVC.Application.ViewModels.Trip
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<NewTripVm, TripModel>();
+            profile.CreateMap<NewTripVm, TripModel>().ReverseMap();
         }
     }
 

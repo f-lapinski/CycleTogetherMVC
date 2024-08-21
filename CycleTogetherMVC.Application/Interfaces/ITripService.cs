@@ -15,5 +15,11 @@ namespace CycleTogetherMVC.Application.Interfaces
         int AddTrip(NewTripVm trip);
 
         TripDetailsVm GetTripDetails(int tripId);
+
+        NewTripVm GetTripForEdit(int tripId);
+
+        void UpdateTrip(NewTripVm model);
+
+        void DeleteTrip(int tripId);
     }
 }

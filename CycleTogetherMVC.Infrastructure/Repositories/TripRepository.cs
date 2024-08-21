@@ -52,5 +52,17 @@ namespace CycleTogetherMVC.Infrastructure.Repositories
             var comments = _context.TripComments.Where(c => c.TripId == tripId);
             return comments;
         }
+
+        public void UpdateTrip(Trip trip)
+        {
+            _context.Attach(trip);
+            _context.Entry(trip).Property("Title").IsModified = true;
+            _context.Entry(trip).Property("Description").IsModified = true;
+            _context.Entry(trip).Property("StartDate").IsModified = true;
+            _context.Entry(trip).Property("EndDate").IsModified = true;
+            _context.Entry(trip).Property("Distance").IsModified = true;
+            _context.SaveChanges();
+
+        }
     }
 }

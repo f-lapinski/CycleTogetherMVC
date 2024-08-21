@@ -59,5 +59,24 @@ namespace CycleTogetherMVC.Application.Services
 
             return tripVm;
         }
+
+        public NewTripVm GetTripForEdit(int tripId)
+        {
+            var trip = _tripRepository.GetTripById(tripId);
+            var tripVm = _mapper.Map<NewTripVm>(trip);
+
+            return tripVm;
+        }
+
+        public void UpdateTrip(NewTripVm model)
+        {
+            var trip = _mapper.Map<Trip>(model);
+            _tripRepository.UpdateTrip(trip);
+        }
+
+        public void DeleteTrip(int tripId)
+        {
+            _tripRepository.DeleteTrip(tripId);
+        }
     }
 }

@@ -23,6 +23,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddControllersWithViews();
 
+
 builder.Services.AddValidators();
 
 builder.Services.AddApplication();
