@@ -26,8 +26,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddValidators();
 
-builder.Services.AddApplication();
-builder.Services.AddInfrastructure();
+builder.Services.AddApplication(); // Including DI for Application
+builder.Services.AddInfrastructure(); // Including DI for Infrastructure
 
 var app = builder.Build();
 
