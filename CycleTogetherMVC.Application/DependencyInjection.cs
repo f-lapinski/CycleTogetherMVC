@@ -12,7 +12,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using static CycleTogetherMVC.Application.ViewModels.TripComment.NewCommentVm;
 
 namespace CycleTogetherMVC.Application
 {
@@ -29,7 +28,6 @@ namespace CycleTogetherMVC.Application
         {
             services.AddFluentValidationAutoValidation();
             services.AddScoped<IValidator<NewTripVm>, NewTripVmValidation>();
-            services.AddScoped<IValidator<NewCommentVm>, NewCommentVmValidation>();
 
             return services;
         }

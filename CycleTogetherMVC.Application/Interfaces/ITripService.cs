@@ -21,5 +21,7 @@ namespace CycleTogetherMVC.Application.Interfaces
         void UpdateTrip(NewTripVm model);
 
         void DeleteTrip(int tripId);
+
+        TripComment AddComment(int id, string comment);
     }
 }

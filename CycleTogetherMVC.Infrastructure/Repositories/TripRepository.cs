@@ -64,5 +64,11 @@ namespace CycleTogetherMVC.Infrastructure.Repositories
             _context.SaveChanges();
 
         }
+
+        public void AddComment(TripComment comment)
+        {
+            _context.TripComments.Add(comment);
+            _context.SaveChanges();
+        }
     }
 }
