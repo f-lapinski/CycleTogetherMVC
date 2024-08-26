@@ -5,6 +5,7 @@ using CycleTogetherMVC.Application.ViewModels.Trip;
 using CycleTogetherMVC.Application.ViewModels.TripComment;
 using CycleTogetherMVC.Domain.Interface;
 using CycleTogetherMVC.Domain.Model;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

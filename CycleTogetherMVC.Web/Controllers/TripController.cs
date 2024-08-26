@@ -27,13 +27,13 @@ namespace CycleTogetherMVC.Web.Controllers
         [HttpPost]
         public IActionResult Create(NewTripVm model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var id = _tripService.AddTrip(model);
-                return RedirectToAction("Index");
+                return View(model);
             }
-            
-            return View(model);
+
+            var id = _tripService.AddTrip(model);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -46,13 +46,14 @@ namespace CycleTogetherMVC.Web.Controllers
         [HttpPost]
         public IActionResult Edit(NewTripVm model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _tripService.UpdateTrip(model);
-                return RedirectToAction("Index");
+                return View(model);
             }
 
-            return View(model);
+            _tripService.UpdateTrip(model);
+            return RedirectToAction("Index");
+            
         }
 
         public IActionResult Details(int id) 
@@ -60,7 +61,7 @@ namespace CycleTogetherMVC.Web.Controllers
             var trip = _tripService.GetTripDetails(id);
 
             if (trip == null)
-            {;
+            {
                 return NotFound();
             } 
             else
@@ -77,8 +78,12 @@ namespace CycleTogetherMVC.Web.Controllers
 
         public IActionResult AddComment(int id, string comment)
         {
-            _tripService.AddComment(id, comment);
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
 
+            _tripService.AddComment(id, comment);
             return RedirectToAction("Details", new { id });
         }
     }

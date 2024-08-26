@@ -1,7 +1,9 @@
 ﻿using CycleTogetherMVC.Application.Interfaces;
 using CycleTogetherMVC.Application.Services;
+using CycleTogetherMVC.Application.Validators;
 using CycleTogetherMVC.Application.ViewModels.Trip;
 using CycleTogetherMVC.Application.ViewModels.TripComment;
+using CycleTogetherMVC.Domain.Model;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,8 +28,11 @@ namespace CycleTogetherMVC.Application
 
         public static IServiceCollection AddValidators(this IServiceCollection services)
         {
+            
+            services.AddScoped<IValidator<NewTripVm>, NewTripVmValidator>();
+            services.AddScoped<IValidator<TripComment>, AddCommentValidator>();
+
             services.AddFluentValidationAutoValidation();
-            services.AddScoped<IValidator<NewTripVm>, NewTripVmValidation>();
 
             return services;
         }

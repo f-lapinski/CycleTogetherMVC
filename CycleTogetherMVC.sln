@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleTogetherMVC.Web", "CycleTogetherMVC.Web\CycleTogetherMVC.Web.csproj", "{8955CB50-02DF-4E41-9AF2-7DD40FC0464A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CycleTogetherMVC.Web", "CycleTogetherMVC.Web\CycleTogetherMVC.Web.csproj", "{8955CB50-02DF-4E41-9AF2-7DD40FC0464A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{5A38BF0D-8F98-4B4C-B668-10C23CD1E93A}"
 EndProject
@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FA1C0049-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{14A4084D-FEAD-4792-BEE0-F89B35BF794C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleTogetherMVC.Application", "CycleTogetherMVC.Application\CycleTogetherMVC.Application.csproj", "{B65E45E2-7480-4399-A171-6E5250909B3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CycleTogetherMVC.Application", "CycleTogetherMVC.Application\CycleTogetherMVC.Application.csproj", "{B65E45E2-7480-4399-A171-6E5250909B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleTogetherMVC.Domain", "CycleTogetherMVC.Domain\CycleTogetherMVC.Domain.csproj", "{EDCFE8C0-F66C-4C21-AC9C-8676095962B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CycleTogetherMVC.Domain", "CycleTogetherMVC.Domain\CycleTogetherMVC.Domain.csproj", "{EDCFE8C0-F66C-4C21-AC9C-8676095962B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleTogetherMVC.Infrastructure", "CycleTogetherMVC.Infrastructure\CycleTogetherMVC.Infrastructure.csproj", "{29A1ED9F-DA16-4182-8FED-374DF2F4CB72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CycleTogetherMVC.Infrastructure", "CycleTogetherMVC.Infrastructure\CycleTogetherMVC.Infrastructure.csproj", "{29A1ED9F-DA16-4182-8FED-374DF2F4CB72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CycleTogetherMVC.Tests", "CycleTogetherMVC.Tests\CycleTogetherMVC.Tests.csproj", "{DD28FED4-E7FA-4EF6-8592-8969D0736998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CycleTogetherMVC.Tests", "CycleTogetherMVC.Tests\CycleTogetherMVC.Tests.csproj", "{DD28FED4-E7FA-4EF6-8592-8969D0736998}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

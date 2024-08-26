@@ -22,6 +22,6 @@ namespace CycleTogetherMVC.Application.Interfaces
 
         void DeleteTrip(int tripId);
 
-        TripComment AddComment(int id, string comment);
+        TripComment AddComment(int id, string commentContent);
     }
 }
