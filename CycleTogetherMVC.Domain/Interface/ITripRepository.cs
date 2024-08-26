@@ -20,5 +20,7 @@ namespace CycleTogetherMVC.Domain.Interface
         IQueryable<TripComment> GetTripComments(int tripId);
 
         void UpdateTrip(Trip trip);
+
+        void AddComment(TripComment comment);
     }
 }

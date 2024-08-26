@@ -1,7 +1,10 @@
-﻿@model CycleTogetherMVC.Application.ViewModels.Trip.TripDetailsVm
+﻿@using CycleTogetherMVC.Domain.Model
+@model CycleTogetherMVC.Application.ViewModels.Trip.TripDetailsVm
 
 @{
     ViewData["Title"] = "Details";
+
+    var tripId = Model.Id;
 }
 
 <h1>Details</h1>
@@ -73,6 +76,15 @@
         <p>No comments available.</p>
     }
 </div>
+
+<form asp-action="AddComment" asp-controller="Trip" method="post">
+    <input type="hidden" id="id" name="id" value="@Model.Id" />
+    <label for="comment">Comment:</label>
+    <input type="textarea" id="comment" name="comment" required>
+
+    <input type="submit" value="Submit">
+</form>
+
 <br />
 <div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

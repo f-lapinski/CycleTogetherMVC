@@ -74,5 +74,12 @@ namespace CycleTogetherMVC.Web.Controllers
             _tripService.DeleteTrip(id);
             return RedirectToAction("Index");
         }
+
+        public IActionResult AddComment(int id, string comment)
+        {
+            _tripService.AddComment(id, comment);
+
+            return RedirectToAction("Details", new { id });
+        }
     }
 }
