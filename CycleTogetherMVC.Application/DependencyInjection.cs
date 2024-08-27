@@ -30,7 +30,7 @@ namespace CycleTogetherMVC.Application
         {
             
             services.AddScoped<IValidator<NewTripVm>, NewTripVmValidator>();
-            services.AddScoped<IValidator<TripComment>, AddCommentValidator>();
+            services.AddScoped<IValidator<NewCommentVm>, NewCommentVmValidator>();
 
             services.AddFluentValidationAutoValidation();
 

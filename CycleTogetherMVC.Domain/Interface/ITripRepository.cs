@@ -21,6 +21,6 @@ namespace CycleTogetherMVC.Domain.Interface
 
         void UpdateTrip(Trip trip);
 
-        void AddComment(TripComment comment);
+        int AddComment(TripComment comment);
     }
 }

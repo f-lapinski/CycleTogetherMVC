@@ -1,4 +1,5 @@
 ﻿@using CycleTogetherMVC.Domain.Model
+@using NewCommentVm = CycleTogetherMVC.Application.ViewModels.TripComment.NewCommentVm
 @model CycleTogetherMVC.Application.ViewModels.Trip.TripDetailsVm
 
 @{
@@ -77,13 +78,7 @@
     }
 </div>
 
-<form asp-action="AddComment" asp-controller="Trip" method="post">
-    <input type="hidden" id="id" name="id" value="@Model.Id" />
-    <label for="comment">Comment:</label>
-    <input type="textarea" id="comment" name="comment" required>
-
-    <input type="submit" value="Submit">
-</form>
+@Html.Partial("_NewComment", new NewCommentVm { TripId = Model.Id })
 
 <br />
 <div>

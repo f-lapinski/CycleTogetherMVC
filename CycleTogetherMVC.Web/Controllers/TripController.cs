@@ -1,5 +1,7 @@
 ﻿using CycleTogetherMVC.Application.Interfaces;
 using CycleTogetherMVC.Application.ViewModels.Trip;
+using CycleTogetherMVC.Application.ViewModels.TripComment;
+using CycleTogetherMVC.Domain.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CycleTogetherMVC.Web.Controllers
@@ -76,15 +78,22 @@ namespace CycleTogetherMVC.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult AddComment(int id, string comment)
+        [HttpGet]
+        public IActionResult AddComment()
+        {
+            return View(new NewCommentVm());
+        }
+
+        [HttpPost]
+        public IActionResult AddComment(NewCommentVm model)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                return PartialView("_NewComment", model);
             }
 
-            _tripService.AddComment(id, comment);
-            return RedirectToAction("Details", new { id });
+            var id = _tripService.AddComment(model);
+            return RedirectToAction("Details", new { id = model.TripId});
         }
     }
 }

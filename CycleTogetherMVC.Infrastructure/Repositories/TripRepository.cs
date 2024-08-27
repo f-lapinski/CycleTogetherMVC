@@ -65,10 +65,12 @@ namespace CycleTogetherMVC.Infrastructure.Repositories
 
         }
 
-        public void AddComment(TripComment comment)
+        public int AddComment(TripComment comment)
         {
             _context.TripComments.Add(comment);
             _context.SaveChanges();
+
+            return comment.Id;
         }
     }
 }

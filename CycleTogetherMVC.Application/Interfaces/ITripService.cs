@@ -1,4 +1,5 @@
 ﻿using CycleTogetherMVC.Application.ViewModels.Trip;
+using CycleTogetherMVC.Application.ViewModels.TripComment;
 using CycleTogetherMVC.Domain.Model;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,6 @@ namespace CycleTogetherMVC.Application.Interfaces
 
         void DeleteTrip(int tripId);
 
-        TripComment AddComment(int id, string commentContent);
+        int AddComment(NewCommentVm model);
     }
 }

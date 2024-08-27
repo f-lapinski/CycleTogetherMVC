@@ -80,19 +80,13 @@ namespace CycleTogetherMVC.Application.Services
             _tripRepository.DeleteTrip(tripId);
         }
 
-        public TripComment AddComment(int id,  string commentContent)
+        public int AddComment(NewCommentVm model)
         {
-            var comment = new TripComment
-            {
-                Author = "Test",
-                Content = commentContent,
-                CreatedAt = DateTime.Now,
-                TripId = id
-            };
+            var newComment = _mapper.Map<TripComment>(model);
+            newComment.Author = "Test Author of Comment";
+            var id = _tripRepository.AddComment(newComment);
 
-            _tripRepository.AddComment(comment);
-
-            return comment;
+            return id;
         }
     }
 }
